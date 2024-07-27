@@ -80,5 +80,15 @@ git clone repository_url
 ```
 4. You now have a copy of the repository on your computer.
 
+### Unit Tests
+
+## *Automated Testing
+
+1. To enable automated unit tests, go to the repository on GitHub.
+2. Click the "Actions" tab.
+3. Click the "I understand workflows, go ahead and enable them" button.
+
+
+
 
 
