@@ -1,0 +1,33 @@
+[project]
+name = "practice-project"
+description = "A practice project for open-source development"
+authors = []
+dynamic = ["version"]
+
+readme = "README.md"
+license = { file = "LICENSE" }
+
+# ADD NEW DEPENDENCIES HERE
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "scikit-learn",
+]
+
+test = [
+    "pytest",
+    "hypothesis"
+]
+
+[project.urls]
+repository = "https://github.com/AutoResearch/contributor-onboarding"
+documentation = "https://autoresearch.github.io/contributor-onboarding/"
+
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
