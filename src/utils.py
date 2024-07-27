@@ -4,7 +4,7 @@ import numpy as np
 # TODO: make all functions work with strings as well
 # TODO: add a new cool calculator function
 
-def sum(a: Optional[float, int], b: Optional[float, int]) -> float:
+def sum(a: int, b: int) -> int:
     '''
     This function returns the sum of two numbers
 
@@ -30,7 +30,7 @@ def multiply(a, b) -> float:
     '''
     return a * b
 
-def divide(a: Optional[float, int], b: Optional[float, int]) -> float:
+def divide(a: float, b: float) -> float:
     '''
     ...
 
@@ -43,7 +43,7 @@ def divide(a: Optional[float, int], b: Optional[float, int]) -> float:
     '''
     return a / b
 
-def modulo(a: int, b: int) -> float:
+def modulo(a: int, b: int):
     '''
     ...
 
