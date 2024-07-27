@@ -133,6 +133,36 @@ git clone repository_url
 ```
 4. You now have a copy of the repository on your computer.
 
+## Create a Virtual Environment
+
+It is a good practice to create a virtual environment for each project you work on.
+This ensures that the dependencies for each project are isolated from each other.
+Here, we will create a virtual environment for the project in Python.
+
+1. Open a terminal.
+2. Navigate to the directory where you cloned the repository.
+3. Run the following command to create a virtual environment:
+```bash
+python3.9 -m venv venv
+```
+4. Activate the virtual environment:
+```bash
+source venv/bin/activate
+```
+5. You should see `(venv)` in your terminal prompt, indicating that the virtual environment is active.
+6. Upgrade pip
+```bash
+pip install --upgrade pip
+```
+7. Install the project dependencies:
+```bash
+pip install --upgrade --editable ".[dev]"
+```
+
+Now you can use this environment to run code for your project in PyCharm. 
+Note that you will want to configure PyCharm to use this environment for your project.
+
+
 ## Have a look at the repository
 
 Next, all students should have a look at the repository. The main code is in the `src` directory.
@@ -272,8 +302,6 @@ Once the issue is fixed, students should create a pull request to merge their br
 3. Click the "Current Branch" dropdown.
 4. Select the branch you want to merge into the main branch.
 5. Click the "Pull Request" button.
-6. Enter a title and description for the pull request.
-7. Click the "Create Pull Request" button.
 
 #### PR Via GitHub
 
@@ -281,7 +309,8 @@ Once the issue is fixed, students should create a pull request to merge their br
 2. Click the "Pull requests" tab.
 3. Click the "New pull request" button.
 4. Select the branch you want to merge into the main branch.
-5. Enter a title and description for the pull request.
+5. Enter a title and description for the PR.
+6. Fill out the PR template.
 7. Assign reviewers to the PR.
 6. Click the "Create pull request" button.
 
@@ -291,13 +320,91 @@ Once the issue is fixed, students should create a pull request to merge their br
 Once a pull request (PR) is created, other students should review the code changes.
 Each PR should have at least two reviewers. You can assign reviewers in the PR itself.
 
+### Reviewing a PR
+
+1. Go to the repository on GitHub.
+2. Click the "Pull requests" tab.
+3. Click the PR you want to review.
+4. Review the changes in the PR.
+5. Add comments to the PR if you have any feedback.
+
+If you are satisfied with the changes, you can approve the PR.
+
+6. Click the "Approve" button.
+7. You may add any additional comments, e.g., congratulate them on the great code they wrote.
+
+If you are concerned about the changes, you can request changes from the author.
+
+6. Click the "Request changes" button.
+7. Enter a reason for the requested changes.
+
+Once all reviewers have approved the PR, the author can merge the PR into the main branch.
+
 ### Unit Tests
 
-## *Automated Testing
+Unit tests are a way to ensure that your code works as expected.
+
+#### Writing Unit Tests
+
+To write a unit test, you need to create a new file in the `tests` directory with the name `test_<module>.py`, 
+where `<module>` is the name of the module you want to test. See the example in the repo. 
+
+You may want to create some more issues to propose individual tests. 
+
+Follow the PR process above to then add those tests.
+
+## Automated Testing
+
+Writing tests is great, but running them manually can be time-consuming.
+Ideally, we should run all tests automatically whenever a new change is proposed to the codebase.
+
+### *Enable Automated Testing
+
+The first thing we need to do is to enable automated testing in the repository.
 
 1. To enable automated unit tests, go to the repository on GitHub.
 2. Click the "Actions" tab.
 3. Click the "I understand workflows, go ahead and enable them" button.
+
+### Add the Test Workflow
+
+Now, we need to add a test workflow to the repository. 
+To do this, simply rename the ``test-pytest.yml.disabled`` file in the ``.github/workflows`` 
+directory to ``test-pytest.yml``.
+
+Of course, this should be done via a PR and code review.
+
+Once the test workflow is enabled, all tests will run automatically whenever a new PR is created.
+
+## Automated Documentation
+
+Documentation is an important part of any software project. You may have noticed a folder in your repository
+called `docs`. This folder contains the documentation for the project.
+
+Here, we will enable automated documentation generation using mkdocs. We will automatically generate a documentation
+every time a code is pushed to the main branch.
+
+1. First, we want to add the relevant GitHub username to the ``mkdocs.yml`` file:
+```
+repo_url: 'https://github.com/GITHUBUSERNAME/contributor-onboarding'
+```
+
+2. Now we want to enable the publication workflow. 
+You can do this by changing the name of the file ``docs-publish.yml.disabled`` in the ``.github/workflows`` 
+directory to ``docs-publish.yml``.
+
+3. Now we want to update the documentation links for our project in the ``pyproject.toml`` file. 
+To do this, add the corresponding GitHub repository link to the ``documentation`` section of the file.
+```
+[project.urls]
+repository = "https://github.com/GITHUBUSERNAME/contributor-onboarding"
+documentation = "https://GITHUBUSERNAME.github.io/contributor-onboarding/"
+```
+
+4. Finally, we need to make sure the documentation can be built in the repository. 
+To do this, navigate to the Settings -> GitHub Pages. For "Source", select "Deploy from Branch". 
+For "Branch", select "gh-pages". Click "Save".
+
 
 
 
