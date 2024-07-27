@@ -89,3 +89,18 @@ def return_hexadecimal(a: int) -> float:
     '''
 
     return hex(a)
+
+
+def return_random_number() -> int:
+    '''
+    ...
+
+    Args:
+    a: float
+    b: float
+
+    Returns:
+    float
+    '''
+
+    return np.random.randint(0, 100)
