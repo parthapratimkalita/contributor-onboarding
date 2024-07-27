@@ -1,5 +1,9 @@
 # Basic Tutorial for Open Source Development on GitHub
 
+## Legend
+Sections marked with an asterix (*) are meant to be executed only by the team leader. These sections typically involve 
+one-time tasks, such as setting up a branch protection rule. 
+
 ## Requirements
 
 ### Required
@@ -11,7 +15,7 @@
 - [GitHub Desktop](https://desktop.github.com/download/) installed on your computer
 - [Pycharm Community Edition](https://www.jetbrains.com/pycharm/download/other.html]) installed on your computer
 
-## Forking a Repository
+## *Forking a Repository
 
 1. Go to the repository you want to fork: https://github.com/AutoResearch/contributor-onboarding
 2. Click the "Fork" button in the upper right corner of the page.
@@ -21,7 +25,13 @@
 6. Click the "Create Fork" button.
 4. You now have a copy of the repository in your account.
 
-## Adding Contributors to a Repository
+### Enable Issues
+1. Go to the repository on GitHub you just forked.
+2. Click the "Settings" tab.
+3. Scroll down to the "Features" section.
+4. Check the box "Issues".
+
+## *Adding Contributors to a Repository
 1. Go to the repository on GitHub you want to add contributors to. This is the repository you just forked.
 2. Click the "Settings" tab.
 3. Click the "Manage access" button.
@@ -33,6 +43,18 @@
 8. Once they accept the invitation, they will be able to contribute to the repository.
 
 *Hint: You can also add contributors by adding their GitHub username to the `CONTRIBUTORS.md` file in the repository.*
+
+## *Adding Branch Protection Rules
+1. Go to the repository on GitHub you want to add branch protection rules to. This is the repository you just forked.
+2. Click the "Settings" tab.
+3. Click the "Branches" tab.
+4. Click the "Add classic branch protection rule" link.
+5. Enter the name of the branch you want to protect. For this exercise, you will want to protect the ``main`` branch.
+6. Check the box "Require pull request reviews before merging".
+7. Check the box "Require approvals".
+8. Enter the number of approvals required. For this exercise, you will want to require two approvals.
+7. 
+
 
 ## Cloning a Repository
 
@@ -57,4 +79,6 @@ You may also need to give GitHub Desktop permission to access your GitHub accoun
 git clone repository_url
 ```
 4. You now have a copy of the repository on your computer.
+
+
 
