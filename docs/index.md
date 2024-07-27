@@ -406,6 +406,33 @@ To do this, navigate to the Settings -> GitHub Pages. For "Source", select "Depl
 For "Branch", select "gh-pages". Click "Save".
 
 
+5. Publishing your Package on PyPi
+
+Here, we will simulate how to publish your code as an actual PyPi package.
+However, we will not actually publish the code to PyPi, but rather to the test PyPi server.
+
+1. The owner of the GitHub repository should first create a PyPi account.
+They then need to create a PyPi API token. This token should be stored as a secret in the GitHub repository.
+
+2. Next they need to add the token to the GitHub secrets.
+   - Navigate to your GitHub repository.
+   - Go to `Settings` > `Secrets and variables` > `Actions`.
+   - Click `New repository secret`.
+   - Add a new secret with the name `TEST_PYPI_API_TOKEN` and the value of your Test PyPI token.
+
+3. Now, we need to enable the publication workflow. 
+You can do this by changing the name of the file ``python-publish.yml.disabled`` in the ``.github/workflows``
+directory to ``python-publish.yml``.
+
+4. Now, you can create a new release in the repository. 
+   - Go to the repository on GitHub.
+   - Click the "Releases" tab.
+   - Click the "Draft a new release" button.
+   - Enter a tag version (e.g., v0.1.0).
+   - Enter a title and description for the release.
+   - Click the "Publish release" button.
+
+**Congratulations, you published your first pip package!**
 
 
 
