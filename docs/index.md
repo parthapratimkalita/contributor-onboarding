@@ -340,11 +340,11 @@ If you are concerned about the changes, you can request changes from the author.
 
 Once all reviewers have approved the PR, the author can merge the PR into the main branch.
 
-### Unit Tests
+## Unit Tests
 
 Unit tests are a way to ensure that your code works as expected.
 
-#### Writing Unit Tests
+### Writing Unit Tests
 
 To write a unit test, you need to create a new file in the `tests` directory with the name `test_<module>.py`, 
 where `<module>` is the name of the module you want to test. See the example in the repo. 
