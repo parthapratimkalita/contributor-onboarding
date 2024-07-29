@@ -61,6 +61,7 @@ def modulo(a: int, b: int):
 
     return result
 
+
 def element_wise_multiply(a: np.array, b: np.array) -> np.array:
     '''
     ...
@@ -74,10 +75,12 @@ def element_wise_multiply(a: np.array, b: np.array) -> np.array:
     '''
 
     # let's hope that both vectors have the same shape
-if a.shape == b.shape:
-    return a@b
-else:
-    print("The two arrays need to be of the same shape")
+
+
+    if a.shape == b.shape:
+        return a @ b
+    else:
+        print("The two arrays need to be of the same shape")
 
 
 def return_hexadecimal(a: int) -> float:
