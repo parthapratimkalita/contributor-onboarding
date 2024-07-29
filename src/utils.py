@@ -1,21 +1,18 @@
 from typing import Optional
+from typing import Union
 import numpy as np
 
 # TODO: make all functions work with strings as well
 # TODO: add a new cool calculator function
 
-def sum(a: int, b: int) -> int:
-    '''
-    This function returns the sum of two numbers
-
-    Args:
-    a: float the first number
-    b: float the second number
-
-    Returns:
-    float the sum of a and b
-    '''
-    return a + b
+def sum(a: Union[int, str], b: Union[int, str]) -> Union[int, str]:
+    
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return a + b
+    elif isinstance(a, str) and isinstance(b, str):
+        return a + b
+    else:
+        raise ValueError("Both arguments must be of the same type, either both numbers or both strings.")
 
 def multiply(a, b) -> float:
     '''
