@@ -6,17 +6,13 @@ import numpy as np
 # TODO: add a new cool calculator function
 
 def sum(a: Union[int, str], b: Union[int, str]) -> Union[int, str]:
-    '''
-    This function returns the sum of two numbers or strings
-
-    Args:
-    a: float the first number or string
-    b: float the second number or string
-
-    Returns:
-    float the sum of a and b or sum of two strings
-    '''
-    return a + b
+    
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return a + b
+    elif isinstance(a, str) and isinstance(b, str):
+        return a + b
+    else:
+        raise ValueError("Both arguments must be of the same type, either both numbers or both strings.")
 
 def multiply(a, b) -> float:
     '''
