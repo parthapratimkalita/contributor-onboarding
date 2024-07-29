@@ -1,4 +1,5 @@
 from typing import Optional
+from typing import Union
 import numpy as np
 
 # TODO: make all functions work with strings as well
@@ -6,14 +7,14 @@ import numpy as np
 
 def sum(a: Union[int, str], b: Union[int, str]) -> Union[int, str]:
     '''
-    This function returns the sum of two numbers
+    This function returns the sum of two numbers or strings
 
     Args:
-    a: float the first number
-    b: float the second number
+    a: float the first number or string
+    b: float the second number or string
 
     Returns:
-    float the sum of a and b
+    float the sum of a and b or sum of two strings
     '''
     return a + b
 
