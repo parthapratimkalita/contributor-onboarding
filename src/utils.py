@@ -74,7 +74,7 @@ def element_wise_multiply(a: np.array, b: np.array) -> np.array:
 
     # let's hope that both vectors have the same shape
 
-    return np.multiply(a, b)
+    return a@b
 
 def return_hexadecimal(a: int) -> float:
     '''
