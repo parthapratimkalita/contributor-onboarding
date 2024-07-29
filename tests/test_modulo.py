@@ -1,4 +1,4 @@
-from src.utils import multiply
+from src.utils import modulo
 def test_modulo():
     a = 7
     b = 3
